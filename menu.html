@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Menu Selection · Soul Food · BKK Day Parties</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4EFE7;color:#1F1B17;font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#DC4A1E;text-decoration:none}
+a:hover{color:#1F1B17}
+</style>
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('DA1Q70JC77U575JECMB0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+</helmet>
+
+<div style="min-height:100vh;background:#F4EFE7;border-top:2px dotted #DC4A1E;display:flex;flex-direction:column">
+
+<header style="border-bottom:1px dotted #CFC4B6">
+  <div style="max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <a href="/" style="display:flex;align-items:center;gap:8px;color:#1F1B17;font-weight:700;font-size:13px;letter-spacing:0.2em">BKK DAY PARTIES <span style="color:#DC4A1E">✦</span></a>
+    <nav style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;font-size:14px;font-weight:500">
+      <a href="/#soul-food" style="color:#1F1B17">Soul Food</a>
+      <a href="/#contact" style="color:#1F1B17">Contact</a>
+      <a href="{{ ticketUrl }}" style="background:#DC4A1E;color:#fff;padding:10px 18px;font-family:'DM Serif Display',serif;font-size:16px" style-hover="background:#1F1B17;color:#fff">BOOK NOW</a>
+    </nav>
+  </div>
+</header>
+
+<main style="flex:1;padding:72px 24px 96px">
+  <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-direction:column;gap:12px;text-align:center;align-items:center">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#DC4A1E">Soul Food · Saturday 31 October</div>
+      <h1 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(40px,6vw,64px);line-height:1">Menu Selection</h1>
+      <div style="display:flex;align-items:center;gap:12px;width:240px;margin-top:6px"><span style="flex:1;height:1px;background:#8C7F70"></span><span style="color:#DC4A1E;font-size:12px">✦</span><span style="flex:1;height:1px;background:#8C7F70"></span></div>
+    </div>
+
+    <sc-if value="{{ isHolding }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#FAF7F1;border:1px solid #E4DACB;padding:clamp(28px,5vw,48px);text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center">
+        <p style="margin:0;font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,32px);line-height:1.3;text-wrap:balance">Menu selection opens Saturday 24 October. Check your email for your link.</p>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#4A423A;max-width:520px">Menu selections are made per guest 7 days before the event. We will email your link on Saturday 24 October.</p>
+        <a href="/assets/soulfood-menu.png" target="_blank" style="font-weight:600;font-size:15px">See the set menu →</a>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px">
+          <div style="border:1px dotted #DC4A1E;padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E">ONE FORM PER GUEST</span><span style="font-size:14px;line-height:1.55">Each guest has their own ticket number. Submit once for each.</span></div>
+          <div style="border:1px dotted #DC4A1E;padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E">HAVE READY</span><span style="font-size:14px;line-height:1.55">Your order number and ticket numbers from your Ticket Tailor confirmation email.</span></div>
+          <div style="border:1px dotted #DC4A1E;padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E">CLOSES</span><span style="font-size:14px;line-height:1.55">11:59pm Wednesday 28 October. No selection means the chef's selection.</span></div>
+        </div>
+        <div style="display:flex;justify-content:flex-end"><a href="/assets/soulfood-menu.png" target="_blank" style="font-weight:600;font-size:14px">View the full set menu →</a></div>
+        <sc-if value="{{ hasTally }}" hint-placeholder-val="{{ false }}">
+          <iframe src="{{ tallyUrl }}" title="Soul Food menu selection" style="width:100%;height:1500px;border:0;background:transparent"></iframe>
+        </sc-if>
+        <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="background:#FAF7F1;border:1px solid #E4DACB;padding:clamp(22px,4vw,40px);display:flex;flex-direction:column;gap:36px">
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <div style="font-size:13px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E;border-bottom:1px solid #DC4A1E;padding-bottom:8px">1. YOUR BOOKING</div>
+              <label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.08em">ORDER NUMBER *</span><input name="order" required style="padding:14px;border:1px solid #CFC4B6;background:#fff;font:inherit;font-size:16px"><span style="font-size:13px;color:#5C534A">Found in your Ticket Tailor confirmation email.</span></label>
+              <label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.08em">TICKET NUMBER *</span><input name="ticket" required style="padding:14px;border:1px solid #CFC4B6;background:#fff;font:inherit;font-size:16px"><span style="font-size:13px;color:#5C534A">Each guest has their own ticket number. One form per guest.</span></label>
+              <label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.08em">GUEST FULL NAME *</span><input name="guest" required style="padding:14px;border:1px solid #CFC4B6;background:#fff;font:inherit;font-size:16px"></label>
+              <label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.08em">EMAIL *</span><input name="email" type="email" required style="padding:14px;border:1px solid #CFC4B6;background:#fff;font:inherit;font-size:16px"><span style="font-size:13px;color:#5C534A">We will send a copy of your choices here.</span></label>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <div style="font-size:13px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E;border-bottom:1px solid #DC4A1E;padding-bottom:8px">2. YOUR MENU</div>
+              <label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.08em">STARTER *</span>
+                <select name="starter" required style="padding:14px;border:1px solid #CFC4B6;background:#fff;font:inherit;font-size:16px;color:#1F1B17"><option value="">Select a starter</option><option>Roll Wit' Me: Fried Shrimp Spring Rolls</option><option>Doo Wop: Fried Chicken Wings</option><option>Let It Roll: Fried Vegetarian Spring Rolls (V)</option></select></label>
+              <label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.08em">APPETISER *</span>
+                <select name="appetiser" required style="padding:14px;border:1px solid #CFC4B6;background:#fff;font:inherit;font-size:16px;color:#1F1B17"><option value="">Select an appetiser</option><option>1, 2 Step Tartines: Les Tartines (V)</option><option>Hail Mary Caesar: Classic Caesar Salad</option><option>Hail Mary Caesar: Classic Caesar Salad, vegetarian option (V)</option><option>Say My Scallops: Grilled U.S. Sea Scallops</option><option>Say My Scallops: vegetarian option, grilled seasonal vegetables (V)</option></select></label>
+              <label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.08em">MAIN *</span>
+                <select name="main" required style="padding:14px;border:1px solid #CFC4B6;background:#fff;font:inherit;font-size:16px;color:#1F1B17"><option value="">Select a main</option><option>Scandalous Salmon: Grilled Norwegian Salmon</option><option>No Diggity Sea Bass: Mediterranean Grilled Sea Bass</option><option>Ridin' Derrty Rigatoni: Dirty Rigatoni</option><option>Ridin' Derrty Rigatoni: vegetarian option (V)</option><option>Creep Carbonara: Classic Carbonara</option><option>Creep Carbonara: vegetarian option (V)</option><option>So Fresh, So Vongole: Spaghetti alle Vongole</option><option>So Fresh, So Vongole: vegetarian option (V)</option></select></label>
+              <div style="font-size:14px;color:#4A423A">Dessert for every guest: <strong>Ice Box Sorbet</strong>.</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <div style="font-size:13px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E;border-bottom:1px solid #DC4A1E;padding-bottom:8px">3. ANYTHING ELSE</div>
+              <label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.08em">ALLERGIES OR DIETARY NEEDS</span><textarea name="dietary" rows="3" style="padding:14px;border:1px solid #CFC4B6;background:#fff;font:inherit;font-size:16px;resize:vertical"></textarea><span style="font-size:13px;color:#5C534A">Already told us at checkout? You can leave this blank.</span></label>
+              <label style="display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.55;cursor:pointer"><input type="checkbox" required style="width:20px;height:20px;margin:1px 0 0;accent-color:#DC4A1E;flex:none"><span>I understand selections close at 11:59pm Wednesday 28 October, and the chef's selection will be served if no choice is made.</span></label>
+            </div>
+            <button type="submit" style="padding:16px;border:0;background:#DC4A1E;color:#fff;font-family:'DM Serif Display',serif;font-size:20px;cursor:pointer" style-hover="background:#1F1B17">Submit my menu</button>
+          </form>
+        </sc-if>
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#FAF7F1;border:1.5px dotted #DC4A1E;padding:clamp(28px,5vw,48px);text-align:center;display:flex;flex-direction:column;gap:20px;align-items:center">
+            <p style="margin:0;font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,30px);line-height:1.35;text-wrap:balance">Got it. Your menu is locked in. Want to choose for another guest on your booking? Submit the form again with their ticket number.</p>
+            <button onClick="{{ again }}" style="padding:14px 28px;border:1px solid #1F1B17;background:transparent;font-family:'DM Serif Display',serif;font-size:18px;cursor:pointer;color:#1F1B17" style-hover="background:#1F1B17;color:#F4EFE7">Submit another guest</button>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isClosed }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#FAF7F1;border:1px solid #E4DACB;padding:clamp(28px,5vw,48px);text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center">
+        <p style="margin:0;font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,32px);line-height:1.3">Menu selections are now closed.</p>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#4A423A">Any guest without a selection will receive the chef's selection on the day.</p>
+        <a href="mailto:hello@bkkdayparties.com" style="font-weight:600;font-size:15px">hello@bkkdayparties.com</a>
+      </div>
+    </sc-if>
+  </div>
+</main>
+
+<footer style="background:#1F1B17;padding:24px;border-top:2px dotted #DC4A1E">
+  <div style="max-width:1112px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;letter-spacing:0.16em;color:#8C7F70">
+    <span>BKK DAY PARTIES <span style="color:#DC4A1E">✦</span> BANGKOK</span>
+    <span>20+ ONLY · BKKDAYPARTIES.COM</span>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;sheetUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;previewState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;holding&quot;,&quot;open&quot;,&quot;closed&quot;],&quot;default&quot;:&quot;open&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tallyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;ticketUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { submitted: false };
+  static SHEET = '';
+  componentDidMount() { this.timer = setInterval(() => this.forceUpdate(), 60000); }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    const OPEN = Date.parse('2026-10-24T00:00:00+07:00');
+    const CLOSE = Date.parse('2026-10-28T23:59:59+07:00');
+    const now = Date.now();
+    let s = new URLSearchParams(location.search).get('state') || this.props.previewState || 'auto';
+    if (s === 'auto') s = now < OPEN ? 'holding' : now > CLOSE ? 'closed' : 'open';
+    const tally = this.props.tallyUrl || '';
+    return {
+      isHolding: s === 'holding', isOpen: s === 'open', isClosed: s === 'closed',
+      tallyUrl: tally, hasTally: !!tally,
+      showForm: !tally && !this.state.submitted, submitted: !tally && !!this.state.submitted,
+      onSubmit: (e) => { e.preventDefault(); const url = this.props.sheetUrl || Component.SHEET; if (url) { const fd = new FormData(e.target); fd.append('event', 'Soul Food 31 Oct 2026'); fetch(url, { method: 'POST', mode: 'no-cors', body: fd }).catch(() => {}); } this.setState({ submitted: true }); window.scrollTo(0, 0); },
+      again: () => this.setState({ submitted: false }),
+      ticketUrl: this.props.ticketUrl || 'https://tickets.alpha11.co/events/alphaeleven/2466870'
+    };
+  }
+}
+</script>
+</body>
+</html>
