@@ -123,7 +123,7 @@ a:hover{color:#1F1B17}
 <script type="text/x-dc" data-dc-script data-props="{&quot;sheetUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;previewState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;holding&quot;,&quot;open&quot;,&quot;closed&quot;],&quot;default&quot;:&quot;open&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tallyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;ticketUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   state = { submitted: false };
-  static SHEET = '';
+  static SHEET = 'https://script.google.com/macros/s/AKfycbyNOXgHRNEPhsPxSz-sUl7C4x_U2HyaY6Z9gOjiBOQc6x3xtE-zEjFrpYtKw2JABWn3-A/exec';
   componentDidMount() { this.timer = setInterval(() => this.forceUpdate(), 60000); }
   componentWillUnmount() { clearInterval(this.timer); }
   renderVals() {
