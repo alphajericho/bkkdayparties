@@ -36,11 +36,11 @@ input:focus{outline:2px solid #DC4A1E;outline-offset:-1px}
 <div style="min-height:100vh;background:#F4EFE7;border-top:2px dotted #DC4A1E">
 
 <header style="position:sticky;top:0;z-index:20;background:rgba(244,239,231,0.96);backdrop-filter:blur(8px);border-bottom:1px dotted #CFC4B6">
-  <div style="max-width:1160px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px">
-    <a href="#home" onClick="{{ closeMenu }}" style="display:flex;align-items:center;gap:8px;color:#1F1B17;font-weight:700;font-size:13px;letter-spacing:0.2em;white-space:nowrap">BKK DAY PARTIES <span style="color:#DC4A1E">✦</span></a>
+  <div style="max-width:1160px;margin:0 auto;padding:12px clamp(14px,4vw,24px);display:flex;align-items:center;justify-content:space-between;gap:10px">
+    <a href="#home" onClick="{{ closeMenu }}" style="display:flex;align-items:center;gap:8px;color:#1F1B17;font-weight:700;font-size:clamp(11px,3.2vw,13px);letter-spacing:clamp(0.08em,0.8vw,0.2em);white-space:nowrap;min-width:0">BKK DAY PARTIES <span style="color:#DC4A1E">✦</span></a>
     <div style="display:flex;align-items:center;gap:10px">
-      <a href="{{ ticketUrl }}" target="_blank" rel="noopener" onClick="{{ openTickets }}" style="background:#DC4A1E;color:#fff;padding:10px 18px;font-family:'DM Serif Display',serif;font-size:16px;white-space:nowrap" style-hover="background:#1F1B17;color:#fff">{{ t.book }}</a>
-      <button onClick="{{ toggleMenu }}" aria-label="Menu" aria-expanded="{{ menuOpen }}" style="width:44px;height:44px;border:1px solid #1F1B17;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0" style-hover="background:#1F1B17">
+      <a href="{{ ticketUrl }}" target="_blank" rel="noopener" onClick="{{ openTickets }}" style="background:#DC4A1E;color:#fff;padding:10px clamp(12px,3vw,18px);font-family:'DM Serif Display',serif;font-size:clamp(14px,4vw,16px);white-space:nowrap" style-hover="background:#1F1B17;color:#fff">{{ t.book }}</a>
+      <button onClick="{{ toggleMenu }}" aria-label="Menu" aria-expanded="{{ menuOpen }}" style="width:44px;height:44px;flex:none;border:1px solid #1F1B17;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0" style-hover="background:#1F1B17">
         <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}">
           <span style="width:18px;height:1.5px;background:#DC4A1E"></span><span style="width:18px;height:1.5px;background:#DC4A1E"></span><span style="width:18px;height:1.5px;background:#DC4A1E"></span>
         </sc-if>
@@ -96,7 +96,7 @@ input:focus{outline:2px solid #DC4A1E;outline-offset:-1px}
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px">
       <article style="background:#FAF7F1;border:1px solid #E4DACB;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))">
-        <img src="/assets/soulfood-poster.png" alt="Soul Food poster" style="display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:4/5">
+        <img src="/assets/soulfood-poster.png" alt="Soul Food poster" style="display:block;width:100%;height:auto;object-fit:cover;aspect-ratio:4/5;align-self:start;min-width:0">
         <div style="padding:28px;display:flex;flex-direction:column;gap:14px">
           <div style="font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#DC4A1E">Sat 31 October</div>
           <h3 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:34px;line-height:1">Soul Food</h3>
@@ -275,22 +275,7 @@ input:focus{outline:2px solid #DC4A1E;outline-offset:-1px}
       </div>
     </div>
 
-    <div style="background:#F4EFE7;border:1px solid #E4DACB;padding:clamp(28px,4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px 48px">
-      <div style="display:flex;flex-direction:column;gap:14px">
-        <h3 style="margin:0;font-size:14px;font-weight:700;letter-spacing:0.16em;color:#DC4A1E">PAYING BY THAI QR OR BANK TRANSFER</h3>
-        <p style="margin:0;font-family:'DM Serif Display',serif;font-size:clamp(22px,2.4vw,28px);line-height:1.3">Choose Thai QR / Bank Transfer at checkout and follow the payment instructions shown.</p>
-      </div>
-      <ol style="margin:0;padding:0 0 0 22px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.6">
-        <li>Your booking is reserved, not confirmed, until we receive your payment.</li>
-        <li>Payment must be received within 24 hours of booking. Unpaid orders will be cancelled and the seats released to other guests.</li>
-        <li>Use your order number as the payment reference so we can match your payment.</li>
-        <li>Your tickets will be issued once your payment is confirmed. Pending orders will not be admitted.</li>
-        <li>Please keep your payment slip. We may ask to see it.</li>
-        <li>Booking within 48 hours of the event? Please pay by card or PayPal so your tickets are issued straight away.</li>
-      </ol>
-    </div>
-
-    <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;flex-direction:column;gap:20px">
       <h3 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:36px">FAQs</h3>
       <div style="border-top:1px solid #CFC4B6">
         <details style="border-bottom:1px solid #CFC4B6"><summary style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-family:'DM Serif Display',serif;font-size:20px">Is this a seated event?<span class="faq-plus" style="color:#DC4A1E;transition:transform .2s">+</span></summary><div style="padding:0 0 20px;font-size:15px;line-height:1.65;color:#3A332C;max-width:760px">The Soul Session (2:00pm to 4:30pm) is seated. From 4:30pm it becomes a standing party.</div></details>
@@ -303,8 +288,7 @@ input:focus{outline:2px solid #DC4A1E;outline-offset:-1px}
         <details style="border-bottom:1px solid #CFC4B6"><summary style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-family:'DM Serif Display',serif;font-size:20px">How do I choose my meal?<span class="faq-plus" style="color:#DC4A1E;transition:transform .2s">+</span></summary><div style="padding:0 0 20px;font-size:15px;line-height:1.65;color:#3A332C;max-width:760px">We will email a menu selection link on Saturday 24 October. Choose a starter, appetiser and main for each guest by 11:59pm Wednesday 28 October.</div></details>
         <details style="border-bottom:1px solid #CFC4B6"><summary style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-family:'DM Serif Display',serif;font-size:20px">What if I don't choose in time?<span class="faq-plus" style="color:#DC4A1E;transition:transform .2s">+</span></summary><div style="padding:0 0 20px;font-size:15px;line-height:1.65;color:#3A332C;max-width:760px">You will receive the chef's selection on the day.</div></details>
         <details style="border-bottom:1px solid #CFC4B6"><summary style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-family:'DM Serif Display',serif;font-size:20px">Can I change my menu choice?<span class="faq-plus" style="color:#DC4A1E;transition:transform .2s">+</span></summary><div style="padding:0 0 20px;font-size:15px;line-height:1.65;color:#3A332C;max-width:760px">Yes, until the deadline. Submit the form again with the same ticket number and we will use your latest choice.</div></details>
-        <details style="border-bottom:1px solid #CFC4B6"><summary style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-family:'DM Serif Display',serif;font-size:20px">Can I pay by Thai QR or bank transfer?<span class="faq-plus" style="color:#DC4A1E;transition:transform .2s">+</span></summary><div style="padding:0 0 20px;font-size:15px;line-height:1.65;color:#3A332C;max-width:760px">Yes. Choose Thai QR / Bank Transfer at checkout. Your order is reserved until payment is confirmed, and must be paid within 24 hours.</div></details>
-        <details style="border-bottom:1px solid #CFC4B6"><summary style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-family:'DM Serif Display',serif;font-size:20px">When will I get my tickets?<span class="faq-plus" style="color:#DC4A1E;transition:transform .2s">+</span></summary><div style="padding:0 0 20px;font-size:15px;line-height:1.65;color:#3A332C;max-width:760px">Card and PayPal: straight away. Thai QR / bank transfer: once we confirm your payment.</div></details>
+        <details style="border-bottom:1px solid #CFC4B6"><summary style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-family:'DM Serif Display',serif;font-size:20px">When will I get my tickets?<span class="faq-plus" style="color:#DC4A1E;transition:transform .2s">+</span></summary><div style="padding:0 0 20px;font-size:15px;line-height:1.65;color:#3A332C;max-width:760px">Your tickets are emailed to you straight away after payment.</div></details>
         <details style="border-bottom:1px solid #CFC4B6"><summary style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-family:'DM Serif Display',serif;font-size:20px">Can I get a refund?<span class="faq-plus" style="color:#DC4A1E;transition:transform .2s">+</span></summary><div style="padding:0 0 20px;font-size:15px;line-height:1.65;color:#3A332C;max-width:760px;display:flex;flex-direction:column;gap:10px"><p style="margin:0">All ticket sales are final. We are unable to offer refunds for a change of mind or if you can no longer attend.</p><p style="margin:0">If we cancel the event, your ticket will be moved to the next event date. If you can't make the new date, let us know and we will refund your ticket price. Booking fees are non-refundable.</p><p style="margin:0">Refunds can take up to 14 business days to process and will be paid back to your original payment method.</p></div></details>
       </div>
     </div>
