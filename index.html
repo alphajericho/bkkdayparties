@@ -31,6 +31,10 @@ input:focus{outline:2px solid #DC4A1E;outline-offset:-1px}
   ttq.page();
 }(window, document, 'ttq');
 </script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1342318294454589');fbq('track','PageView');
+</script>
 </helmet>
 
 <div style="min-height:100vh;background:#F4EFE7;border-top:2px dotted #DC4A1E">
@@ -363,7 +367,7 @@ class Component extends DCLogic {
   static TICKETS = 'https://tickets.alpha11.co/events/alphaeleven/2466870';
   static CHECKOUT = 'https://tickets.alpha11.co/checkout/new-session/id/9254821/chk/e12cf20b3ddd5b22f311bb7f4aa7c2bb/?ref=website_widget&widget=true&modal_widget=true';
   static BREVO = 'https://5b32cc6e.sibforms.com/serve/MUIFAB0uf6H9UgruMLURTnQZHHRHhbguyGWTiOLVinu2Kmqs7PqlPpOcDfwBYl7CT5T-BWV-m5Bxbmm7WI03v0mzlHh0HBK5cGktsYXG-rtJw5Pbq9yLd_oeCpoYeBiYqpi41EgwxSZT48OCgsrQ84CnbnYI9YDA6Rl-f_tLMwlw8HtY2OJ7gQNFDZzlSIW8S-cvLNBVlggV9TiuMQ==';
-  track(ev) { try { window.ttq && window.ttq.track(ev); } catch (e) {} }
+  track(ev) { try { window.ttq && window.ttq.track(ev); } catch (e) {} try { if (window.fbq) fbq('track', ev === 'ClickButton' ? 'InitiateCheckout' : 'CompleteRegistration'); } catch (e) {} }
   static T = {
     en: { events: 'Events', about: 'About', gallery: 'Gallery', contact: 'Contact', menuSel: 'Menu Selection', book: 'BOOK NOW', details: 'Event details',
       upcoming: 'Upcoming', next: 'Next edition', soon: 'Coming soon', soonBody: 'Dates for the next day party go to the mailing list first.',
