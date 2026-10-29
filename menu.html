@@ -64,7 +64,7 @@ fbq('init','1342318294454589');fbq('track','PageView');
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px">
           <div style="border:1px dotted #DC4A1E;padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E">ONE FORM PER GUEST</span><span style="font-size:14px;line-height:1.55">Each guest has their own ticket number. Submit once for each.</span></div>
           <div style="border:1px dotted #DC4A1E;padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E">HAVE READY</span><span style="font-size:14px;line-height:1.55">Your order number and ticket numbers from your Ticket Tailor confirmation email.</span></div>
-          <div style="border:1px dotted #DC4A1E;padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E">CLOSES</span><span style="font-size:14px;line-height:1.55">11:59pm Wednesday 28 October. No selection means the chef's selection.</span></div>
+          <div style="border:1px dotted #DC4A1E;padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E">AFTER BOOKING</span><span style="font-size:14px;line-height:1.55">Once your tickets are ordered, complete your menu here.</span></div>
         </div>
         <div style="display:flex;justify-content:flex-end"><a href="/assets/soulfood-menu.png" target="_blank" style="font-weight:600;font-size:14px">View the full set menu →</a></div>
         <sc-if value="{{ hasTally }}" hint-placeholder-val="{{ false }}">
@@ -92,7 +92,6 @@ fbq('init','1342318294454589');fbq('track','PageView');
             <div style="display:flex;flex-direction:column;gap:18px">
               <div style="font-size:13px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E;border-bottom:1px solid #DC4A1E;padding-bottom:8px">3. ANYTHING ELSE</div>
               <label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.08em">ALLERGIES OR DIETARY NEEDS</span><textarea name="dietary" rows="3" style="padding:14px;border:1px solid #CFC4B6;background:#fff;font:inherit;font-size:16px;resize:vertical"></textarea><span style="font-size:13px;color:#5C534A">Already told us at checkout? You can leave this blank.</span></label>
-              <label style="display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.55;cursor:pointer"><input type="checkbox" required style="width:20px;height:20px;margin:1px 0 0;accent-color:#DC4A1E;flex:none"><span>I understand selections close at 11:59pm Wednesday 28 October, and the chef's selection will be served if no choice is made.</span></label>
             </div>
             <button type="submit" style="padding:16px;border:0;background:#DC4A1E;color:#fff;font-family:'DM Serif Display',serif;font-size:20px;cursor:pointer" style-hover="background:#1F1B17">Submit my menu</button>
           </form>
@@ -135,7 +134,7 @@ class Component extends DCLogic {
     const CLOSE = Date.parse('2026-10-28T23:59:59+07:00');
     const now = Date.now();
     let s = new URLSearchParams(location.search).get('state') || this.props.previewState || 'auto';
-    if (s === 'auto') s = now < OPEN ? 'holding' : now > CLOSE ? 'closed' : 'open';
+    if (s === 'auto') s = 'open';
     const tally = this.props.tallyUrl || '';
     return {
       isHolding: s === 'holding', isOpen: s === 'open', isClosed: s === 'closed',
