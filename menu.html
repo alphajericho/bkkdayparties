@@ -46,7 +46,7 @@ fbq('init','1342318294454589');fbq('track','PageView');
 <main style="flex:1;padding:72px 24px 96px">
   <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
     <div style="display:flex;flex-direction:column;gap:12px;text-align:center;align-items:center">
-      <div style="font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#DC4A1E">Soul Food · Saturday 31 October</div>
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#DC4A1E">Soul Food · Saturday 28 November</div>
       <h1 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(40px,6vw,64px);line-height:1">Menu Selection</h1>
       <div style="display:flex;align-items:center;gap:12px;width:240px;margin-top:6px"><span style="flex:1;height:1px;background:#8C7F70"></span><span style="color:#DC4A1E;font-size:12px">✦</span><span style="flex:1;height:1px;background:#8C7F70"></span></div>
     </div>
@@ -62,11 +62,11 @@ fbq('init','1342318294454589');fbq('track','PageView');
     <sc-if value="{{ isOpen }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex;flex-direction:column;gap:24px">
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px">
-          <div style="border:1px dotted #DC4A1E;padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E">ONE FORM PER GUEST</span><span style="font-size:14px;line-height:1.55">Each guest has their own ticket number. Submit once for each.</span></div>
+          <div style="border:1px dotted #DC4A1E;padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E">ONE FORM PER GUEST</span><span style="font-size:14px;line-height:1.55">One form per guest, using the ticket number in your confirmation email.</span></div>
           <div style="border:1px dotted #DC4A1E;padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E">HAVE READY</span><span style="font-size:14px;line-height:1.55">Your order number and ticket numbers from your Ticket Tailor confirmation email.</span></div>
-          <div style="border:1px dotted #DC4A1E;padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E">AFTER BOOKING</span><span style="font-size:14px;line-height:1.55">Once your tickets are ordered, complete your menu here.</span></div>
+          <div style="border:1px dotted #DC4A1E;padding:18px 20px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#DC4A1E">AFTER BOOKING</span><span style="font-size:14px;line-height:1.55">Choose a starter, appetiser and main for each Soul Session guest.</span></div>
         </div>
-        <div style="display:flex;justify-content:flex-end"><a href="/assets/soulfood-menu.png" target="_blank" style="font-weight:600;font-size:14px">View the full set menu →</a></div>
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px"><span style="font-style:italic;color:#5C534A">Dishes may contain shellfish, gluten, dairy, egg and nuts.</span><a href="/assets/soulfood-menu.png" target="_blank" style="font-weight:600">View the full set menu →</a></div>
         <sc-if value="{{ hasTally }}" hint-placeholder-val="{{ false }}">
           <iframe src="{{ tallyUrl }}" title="Soul Food menu selection" style="width:100%;height:1500px;border:0;background:transparent"></iframe>
         </sc-if>
@@ -126,23 +126,21 @@ fbq('init','1342318294454589');fbq('track','PageView');
 <script type="text/x-dc" data-dc-script data-props="{&quot;sheetUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;previewState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;holding&quot;,&quot;open&quot;,&quot;closed&quot;],&quot;default&quot;:&quot;open&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tallyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;ticketUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   state = { submitted: false };
-  static SHEET = 'https://script.google.com/macros/s/AKfycbyNOXgHRNEPhsPxSz-sUl7C4x_U2HyaY6Z9gOjiBOQc6x3xtE-zEjFrpYtKw2JABWn3-A/exec';
   componentDidMount() { this.timer = setInterval(() => this.forceUpdate(), 60000); }
   componentWillUnmount() { clearInterval(this.timer); }
   renderVals() {
     const OPEN = Date.parse('2026-10-24T00:00:00+07:00');
     const CLOSE = Date.parse('2026-10-28T23:59:59+07:00');
     const now = Date.now();
-    let s = new URLSearchParams(location.search).get('state') || this.props.previewState || 'auto';
-    if (s === 'auto') s = 'open';
+    const s = 'open';
     const tally = this.props.tallyUrl || '';
     return {
       isHolding: s === 'holding', isOpen: s === 'open', isClosed: s === 'closed',
       tallyUrl: tally, hasTally: !!tally,
       showForm: !tally && !this.state.submitted, submitted: !tally && !!this.state.submitted,
-      onSubmit: (e) => { e.preventDefault(); const url = this.props.sheetUrl || Component.SHEET; if (url) { const fd = new FormData(e.target); fd.append('event', 'Soul Food 31 Oct 2026'); fetch(url, { method: 'POST', mode: 'no-cors', body: fd }).catch(() => {}); } this.setState({ submitted: true }); window.scrollTo(0, 0); },
+      onSubmit: (e) => { e.preventDefault(); const url = this.props.sheetUrl || 'https://script.google.com/macros/s/AKfycbyNOXgHRNEPhsPxSz-sUl7C4x_U2HyaY6Z9gOjiBOQc6x3xtE-zEjFrpYtKw2JABWn3-A/exec'; if (url) { const fd = new FormData(e.target); fd.append('event', 'Soul Food 28 Nov 2026'); fetch(url, { method: 'POST', mode: 'no-cors', body: fd }).catch(() => {}); } this.setState({ submitted: true }); window.scrollTo(0, 0); },
       again: () => this.setState({ submitted: false }),
-      ticketUrl: this.props.ticketUrl || 'https://tickets.alpha11.co/events/alphaeleven/2466870'
+      ticketUrl: this.props.ticketUrl || 'https://tickets.alpha11.co/events/alphaeleven/2526734'
     };
   }
 }
